@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 140" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
   <defs>
     <linearGradient id="footer-bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#050a14" stop-opacity="0.2" />
-      <stop offset="100%" stop-color="#040711" stop-opacity="0.9" />
+      <stop offset="0%" stop-color="#080406" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#050204" stop-opacity="0.95" />
     </linearGradient>
     <linearGradient id="footer-accent" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1" />
-      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.6" />
-      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.1" />
+      <stop offset="0%" stop-color="#e11d48" stop-opacity="0.05" />
+      <stop offset="50%" stop-color="#ff2a4b" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#e11d48" stop-opacity="0.05" />
     </linearGradient>
     <filter id="footer-glow">
       <feGaussianBlur stdDeviation="2" result="blur" />
@@ -25,24 +25,24 @@
   </style>
 
   <rect width="1200" height="140" rx="10" fill="url(#footer-bg)" />
-  <line x1="100" y1="20" x2="1100" y2="20" stroke="url(#footer-accent)" stroke-width="1.2" />
+  <line x1="100" y1="20" x2="1100" y2="20" stroke="url(#footer-accent)" stroke-width="1.4" />
 
   <!-- Compass / Log Pose Center Indicator -->
   <g transform="translate(600.0, 20)" filter="url(#footer-glow)">
-    <circle cx="0" cy="0" r="8" fill="#080e1e" stroke="#38bdf8" stroke-width="1.2" />
-    <polygon points="0,-4 3,0 0,4 -3,0" fill="#38bdf8" />
+    <circle cx="0" cy="0" r="8" fill="#080406" stroke="#ff2a4b" stroke-width="1.4" />
+    <polygon points="0,-4 3,0 0,4 -3,0" fill="#ff2a4b" />
   </g>
 
   <!-- Quote & Coordinates -->
-  <text x="600.0" y="65" text-anchor="middle" class="footer-mono" font-size="14" font-weight="600" fill="#e2e8f0" letter-spacing="2">
+  <text x="600.0" y="65" text-anchor="middle" class="footer-mono" font-size="14" font-weight="600" fill="#f8fafc" letter-spacing="2">
     &quot;INHERITED WILL, THE SWELL OF THE AGE, AND THE DREAMS OF ITS PEOPLE.&quot;
   </text>
-  <text x="600.0" y="92" text-anchor="middle" class="footer-mono" font-size="12" fill="#64748b" letter-spacing="3">
-    THE HORIZON STRETCHES ENDLESSLY · THE GRAND LINE OF COMPUTATION AWAITS
+  <text x="600.0" y="92" text-anchor="middle" class="footer-mono" font-size="12" fill="#a39296" letter-spacing="3">
+    CHARTING THE UNKNOWN · WRITING MY STORY IN PIXELS
   </text>
 
   <!-- Coordinates -->
-  <text x="600.0" y="116" text-anchor="middle" class="footer-mono" font-size="10.5" fill="#38bdf8" opacity="0.8" letter-spacing="2">
+  <text x="600.0" y="116" text-anchor="middle" class="footer-mono" font-size="10.5" fill="#ff2a4b" opacity="0.9" letter-spacing="2">
     ✦ CRAFTED BY MAHI PATNI (@MXHI-04) · ALL COORDINATES VERIFIED ✦
   </text>
 </svg>
