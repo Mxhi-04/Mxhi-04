@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://anime-todolist.vercel.app"><img src="assets/mahi-patni-banner.png" width="100%" alt="Mahi Patni — Writing My Story in Pixels"></a>
+<a href="https://anime-todolist.vercel.app"><img src="assets/mahi-patni-banner.png" width="100%" alt="Mahi Patni"></a>
 
 <a href="https://anime-todolist.vercel.app"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=2800&pause=900&color=E11D48&center=true&vCenter=true&width=820&lines=Writing+my+story+in+pixels+%E2%9C%A6%3BPhysics-Informed+AI+%C2%B7+Uncertainty-Aware+ML%3BDecentralized+Multi-Agent+Dispatch+%26+SOS%3BInteractive+3D+Worlds+%C2%B7+Navigating+the+Grand+Line%3BCSE+Undergrad+%C2%B7+Forever+Curious." alt="Typing Intro"></a>
 
@@ -20,37 +20,37 @@
 
 <img src="assets/divider.svg" width="100%" alt="">
 
-## 航 &nbsp;The Logbook // Prologue
+## Overview
 
-<img align="right" width="165" src="https://avatars.githubusercontent.com/u/249584456?v=4&s=320" alt="Mahi Patni" style="border-radius:50%; border: 2px solid #e11d48; box-shadow: 0 0 24px rgba(225, 29, 72, 0.45); margin: 0 0 20px 25px;">
+<img align="right" width="140" src="assets/pixel-cat.gif" alt="Pixel Cat" style="margin: 0 0 15px 25px;">
 
 I write my story in pixels — charting the convergence of **physics-informed machine learning**, **autonomous multi-agent coordination**, and **immersive web architectures**.
 
-- ⚛ **Physics-Anchored Learning**: Pure neural nets fail when extrapolating into unfamiliar domains. For **Asian Paints Alchemy 2026**, I engineered [**ANCHOR**](https://github.com/Mxhi-04/Anchor) — anchoring copolymer glass transition ($T_g$) predictions into the 70-year-old Fox equation, letting Gaussian Process residuals learn only what physics misses, and wrapping predictions in honest **90% conformal intervals** that cut laboratory trials by **58%**.
-- 🛰️ **Decentralized Multi-Agent Swarms**: When extreme floods knock out communications, central servers go dark. For **Code-E-Manipal 2.0**, I built [**FloodSetu**](https://github.com/Mxhi-04/FloodSetu) — an offline-first rescue dispatch network that runs decentralized **Contract-Net auction negotiations** between rescue drones and boats, paired with an immutable relief ledger.
-- 🌊 **Immersive 3D & Creative Playgrounds**: Productivity doesn't have to be sterile. [**Anime Todo**](https://github.com/Mxhi-04/Anime-Todolist) turns deep work into an interactive voyage across 64 curated anime worlds, complete with Three.js ocean stages, an animated Straw Hat companion, dynamic focus timers, and zero-cloud private storage.
-- 🛒 **Offline-Resilient Commerce**: With [**VyaparAI**](https://github.com/Mxhi-04/VyaparAI), I engineered a high-speed retail command center for small storefronts: voice-assisted POS, supplier runway forecasting, and a local AI data analyst that runs entirely in the browser.
+- **[Anchor](https://github.com/Mxhi-04/Anchor)**: Physics-informed machine learning for materials science (Asian Paints Alchemy 2026), combining the Fox equation with Gaussian Process residual modeling and conformal prediction intervals.
+- **[FloodSetu](https://github.com/Mxhi-04/FloodSetu)**: Decentralized multi-agent rescue dispatch engine (Code-E-Manipal 2.0), implementing Contract-Net auction protocols and offline SOS resilience.
+- **[Anime Todo](https://github.com/Mxhi-04/Anime-Todolist)**: Immersive 3D interactive productivity environment built with Three.js, GSAP, and private local-first storage.
+- **[VyaparAI](https://github.com/Mxhi-04/VyaparAI)**: Intelligent retail billing and inventory management workspace with voice-assisted POS and offline analytics.
 
 <br clear="right">
 
 <details>
-<summary>🧭 <b>Log Pose Reading: Coordinates locked… Where are we heading?</b> &nbsp;<sub>(click to inspect)</sub></summary>
+<summary><b>Philosophy &amp; Direction</b> &nbsp;<sub>(click to inspect)</sub></summary>
 <br>
 
 > *"Inherited Will, the Swell of the Age, and the Dreams of its People — these are things that will never be extinguished. As long as people seek the answer to freedom, they will continue to explore."*
 >
-> Across mathematical physics, distributed autonomous swarms, and interactive canvas shaders, every repository is an uncharted island charted and brought to life. **5 flagships** and counting. Keep scrolling to explore the charted sectors. ↓
+> Across mathematical physics, distributed autonomous swarms, and interactive graphics, every project represents a focused exploration of real-world problems and systems design.
 
 </details>
 
 <img src="assets/divider.svg" width="100%" alt="">
 
-## 図 &nbsp;Charted Coordinates // Project Domains
+## Engineering Domains
 
 <sub>Every coordinate charts a distinct engineering domain. Expand a sector to explore the code.</sub>
 
 <details open>
-<summary>⚛ &nbsp;<b>物 · Physics-Informed ML &amp; Materials Intelligence</b> — mathematical physics meets deep learning</summary>
+<summary><b>Physics-Informed Machine Learning &amp; Materials Intelligence</b></summary>
 <br>
 
 | Project | Description | Stack | Status / Links |
@@ -60,7 +60,7 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 </details>
 
 <details open>
-<summary>🛰️ &nbsp;<b>網 · Multi-Agent Protocols &amp; Disaster Resilience</b> — decentralized systems when infrastructure fails</summary>
+<summary><b>Autonomous Swarms &amp; Multi-Agent Protocols</b></summary>
 <br>
 
 | Project | Description | Stack | Status / Links |
@@ -70,7 +70,7 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 </details>
 
 <details>
-<summary>🌊 &nbsp;<b>境 · 3D Worlds &amp; Immersive Interfaces</b> — web experiences with personality, motion &amp; depth</summary>
+<summary><b>Interactive 3D Web Engineering &amp; Creative Graphics</b></summary>
 <br>
 
 | Project | Description | Stack | Status / Links |
@@ -81,7 +81,7 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 </details>
 
 <details>
-<summary>⚡ &nbsp;<b>商 · Intelligent Systems &amp; Local Commerce</b> — high-impact tooling for small businesses</summary>
+<summary><b>Intelligent Systems &amp; Retail Infrastructure</b></summary>
 <br>
 
 | Project | Description | Stack | Status / Links |
@@ -92,42 +92,7 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 
 <img src="assets/divider.svg" width="100%" alt="">
 
-## 艦 &nbsp;Flagship Artifacts // Visual Showcase
-
-<div align="center">
-
-<table>
-<tr>
-<td align="center" width="50%">
-<a href="https://github.com/Mxhi-04/Anchor"><img alt="Anchor" src="https://socialify.git.ci/Mxhi-04/Anchor/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Dark" width="100%"></a>
-</td>
-<td align="center" width="50%">
-<a href="https://github.com/Mxhi-04/Anime-Todolist"><img alt="Anime Todolist" src="https://socialify.git.ci/Mxhi-04/Anime-Todolist/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Signal&stargazers=1&theme=Dark" width="100%"></a>
-</td>
-</tr>
-<tr>
-<td align="center" width="50%">
-<a href="https://github.com/Mxhi-04/FloodSetu"><img alt="FloodSetu" src="https://socialify.git.ci/Mxhi-04/FloodSetu/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit%20Board&stargazers=1&theme=Dark" width="100%"></a>
-</td>
-<td align="center" width="50%">
-<a href="https://github.com/Mxhi-04/VyaparAI"><img alt="VyaparAI" src="https://socialify.git.ci/Mxhi-04/VyaparAI/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Floating%20Cubes&stargazers=1&theme=Dark" width="100%"></a>
-</td>
-</tr>
-</table>
-
-<sub>✦ Live project metrics — select any artifact to inspect the source ✦</sub><br><br>
-
-<a href="https://github.com/Mxhi-04/Anchor"><img src="https://img.shields.io/github/stars/Mxhi-04/Anchor?style=flat-square&logo=github&labelColor=080406&color=e11d48&label=ANCHOR"></a>
-<a href="https://github.com/Mxhi-04/Anime-Todolist"><img src="https://img.shields.io/github/stars/Mxhi-04/Anime-Todolist?style=flat-square&logo=github&labelColor=080406&color=e11d48&label=ANIME-TODOLIST"></a>
-<a href="https://github.com/Mxhi-04/FloodSetu"><img src="https://img.shields.io/github/stars/Mxhi-04/FloodSetu?style=flat-square&logo=github&labelColor=080406&color=e11d48&label=FLOODSETU"></a>
-<a href="https://github.com/Mxhi-04/VyaparAI"><img src="https://img.shields.io/github/stars/Mxhi-04/VyaparAI?style=flat-square&logo=github&labelColor=080406&color=e11d48&label=VYAPARAI"></a>
-<a href="https://github.com/Mxhi-04/Soul-Bites"><img src="https://img.shields.io/github/stars/Mxhi-04/Soul-Bites?style=flat-square&logo=github&labelColor=080406&color=e11d48&label=SOUL-BITES"></a>
-
-</div>
-
-<img src="assets/divider.svg" width="100%" alt="">
-
-## 術 &nbsp;The Arsenal // Weapons & Instruments
+## Technical Arsenal
 
 <div align="center">
 
@@ -137,7 +102,7 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 
 <br><br>
 
-<sub><b>⚡ THE AGENTIC &amp; COMPUTATIONAL SYSTEMS I BUILD WITH</b></sub>
+<sub><b>AGENTIC &amp; COMPUTATIONAL SYSTEMS</b></sub>
 <br><br>
 
 <table>
@@ -153,7 +118,7 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 
 <img src="assets/divider.svg" width="100%" alt="">
 
-## 記 &nbsp;Voyage Records // Flight Analytics
+## Analytics & Milestones
 
 <div align="center">
 
@@ -165,7 +130,7 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 <a href="https://github.com/Mxhi-04"><img src="https://streak-stats.demolab.com/?user=Mxhi-04&hide_border=true&background=080406&stroke=2a0a12&ring=e11d48&fire=ff2a4b&currStreakNum=f8fafc&currStreakLabel=ff2a4b&sideNums=f8fafc&sideLabels=e2d9dc&dates=806c72" width="70%" alt="Streak"></a>
 
 <details>
-<summary>🏆 <b>Achievements unlocked</b></summary>
+<summary><b>Achievements Unlocked</b></summary>
 <br>
 
 <table border="0">
@@ -225,13 +190,13 @@ I write my story in pixels — charting the convergence of **physics-informed ma
   <img alt="A snake eating the contribution grid" src="https://raw.githubusercontent.com/Mxhi-04/Mxhi-04/output/github-contribution-grid-snake.svg">
 </picture>
 
-<sub>🩸 The snake carves a crimson trail across a year of commits.</sub>
+<sub>Activity tracking across a year of contributions.</sub>
 
 </div>
 
 <img src="assets/divider.svg" width="100%" alt="">
 
-## 連 &nbsp;Transmission // Transmit &amp; Connect
+## Connect
 
 <div align="center">
 
