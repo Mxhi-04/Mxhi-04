@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040711" />
+      <stop offset="50%" stop-color="#080e1e" />
+      <stop offset="100%" stop-color="#050a14" />
+    </linearGradient>
+
+    <radialGradient id="nebula-cyan" cx="15%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.32" />
+      <stop offset="60%" stop-color="#0369a1" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="nebula-violet" cx="85%" cy="70%" r="55%">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#4f46e5" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#4f46e5" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#e0f2fe" />
+      <stop offset="70%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.0" />
+      <stop offset="25%" stop-color="#38bdf8" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.9" />
+      <stop offset="75%" stop-color="#c084fc" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.0" />
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glow-light" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glow-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Subtle Dot Grid Pattern -->
+    <pattern id="dot-grid" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#38bdf8" fill-opacity="0.1" />
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulse {
+      0%, 100% { opacity: 0.75; }
+      50% { opacity: 1; }
+    }
+    .mono {
+      font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    }
+    .sans {
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, sans-serif;
+    }
+    .pulsing {
+      animation: pulse 4s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="300" rx="12" fill="url(#bg-grad)" />
+  <rect width="1200" height="300" rx="12" fill="url(#nebula-cyan)" />
+  <rect width="1200" height="300" rx="12" fill="url(#nebula-violet)" />
+  <rect width="1200" height="300" rx="12" fill="url(#dot-grid)" />
+
+  <!-- Outer Frame -->
+  <rect x="1" y="1" width="1198" height="298" rx="11" fill="none" stroke="url(#border-grad)" stroke-width="1.2" />
+
+  <!-- Constellation Connections & Nodes -->
+  <g class="pulsing">
+    <line x1="756.2" y1="31.3" x2="821.9" y2="110.1" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="756.2" y1="31.3" x2="752.0" y2="116.2" stroke="#38bdf8" stroke-opacity="0.063" stroke-width="0.75" /> <line x1="756.2" y1="31.3" x2="856.6" y2="65.9" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="797.9" y1="248.0" x2="826.0" y2="195.9" stroke="#38bdf8" stroke-opacity="0.129" stroke-width="0.75" /> <line x1="797.9" y1="248.0" x2="803.5" y2="159.2" stroke="#38bdf8" stroke-opacity="0.054" stroke-width="0.75" /> <line x1="144.9" y1="83.2" x2="154.5" y2="120.0" stroke="#38bdf8" stroke-opacity="0.183" stroke-width="0.75" /> <line x1="144.9" y1="83.2" x2="128.3" y2="98.3" stroke="#38bdf8" stroke-opacity="0.223" stroke-width="0.75" /> <line x1="144.9" y1="83.2" x2="200.0" y2="59.9" stroke="#38bdf8" stroke-opacity="0.128" stroke-width="0.75" /> <line x1="509.9" y1="137.3" x2="519.8" y2="170.9" stroke="#38bdf8" stroke-opacity="0.191" stroke-width="0.75" /> <line x1="821.9" y1="110.1" x2="752.0" y2="116.2" stroke="#38bdf8" stroke-opacity="0.101" stroke-width="0.75" /> <line x1="821.9" y1="110.1" x2="826.0" y2="195.9" stroke="#38bdf8" stroke-opacity="0.061" stroke-width="0.75" /> <line x1="821.9" y1="110.1" x2="856.6" y2="65.9" stroke="#38bdf8" stroke-opacity="0.137" stroke-width="0.75" /> <line x1="821.9" y1="110.1" x2="927.1" y2="130.5" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="821.9" y1="110.1" x2="803.5" y2="159.2" stroke="#38bdf8" stroke-opacity="0.146" stroke-width="0.75" /> <line x1="154.5" y1="120.0" x2="128.3" y2="98.3" stroke="#38bdf8" stroke-opacity="0.193" stroke-width="0.75" /> <line x1="154.5" y1="120.0" x2="200.0" y2="59.9" stroke="#38bdf8" stroke-opacity="0.088" stroke-width="0.75" /> <line x1="944.0" y1="207.4" x2="941.7" y2="125.3" stroke="#38bdf8" stroke-opacity="0.071" stroke-width="0.75" /> <line x1="944.0" y1="207.4" x2="927.1" y2="130.5" stroke="#38bdf8" stroke-opacity="0.080" stroke-width="0.75" /> <line x1="944.0" y1="207.4" x2="982.7" y2="151.9" stroke="#38bdf8" stroke-opacity="0.108" stroke-width="0.75" /> <line x1="944.0" y1="207.4" x2="953.9" y2="269.5" stroke="#38bdf8" stroke-opacity="0.120" stroke-width="0.75" /> <line x1="128.3" y1="98.3" x2="200.0" y2="59.9" stroke="#38bdf8" stroke-opacity="0.073" stroke-width="0.75" /> <line x1="686.6" y1="201.1" x2="752.0" y2="116.2" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="686.6" y1="201.1" x2="632.6" y2="267.8" stroke="#38bdf8" stroke-opacity="0.062" stroke-width="0.75" /> <line x1="686.6" y1="201.1" x2="644.1" y2="219.7" stroke="#38bdf8" stroke-opacity="0.162" stroke-width="0.75" /> <line x1="686.6" y1="201.1" x2="643.9" y2="205.8" stroke="#38bdf8" stroke-opacity="0.171" stroke-width="0.75" /> <line x1="1143.4" y1="238.8" x2="1128.5" y2="215.5" stroke="#38bdf8" stroke-opacity="0.209" stroke-width="0.75" /> <line x1="1143.4" y1="238.8" x2="1080.4" y2="213.8" stroke="#38bdf8" stroke-opacity="0.107" stroke-width="0.75" /> <line x1="1143.4" y1="238.8" x2="1154.6" y2="187.5" stroke="#38bdf8" stroke-opacity="0.146" stroke-width="0.75" /> <line x1="752.0" y1="116.2" x2="826.0" y2="195.9" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="752.0" y1="116.2" x2="803.5" y2="159.2" stroke="#38bdf8" stroke-opacity="0.109" stroke-width="0.75" /> <line x1="826.0" y1="195.9" x2="803.5" y2="159.2" stroke="#38bdf8" stroke-opacity="0.171" stroke-width="0.75" /> <line x1="856.6" y1="65.9" x2="941.7" y2="125.3" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="856.6" y1="65.9" x2="927.1" y2="130.5" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="856.6" y1="65.9" x2="803.5" y2="159.2" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="286.0" y1="106.1" x2="200.0" y2="59.9" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="286.0" y1="106.1" x2="368.7" y2="64.5" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="286.0" y1="106.1" x2="308.2" y2="85.2" stroke="#38bdf8" stroke-opacity="0.202" stroke-width="0.75" /> <line x1="286.0" y1="106.1" x2="317.7" y2="41.0" stroke="#38bdf8" stroke-opacity="0.096" stroke-width="0.75" /> <line x1="286.0" y1="106.1" x2="286.6" y2="42.7" stroke="#38bdf8" stroke-opacity="0.119" stroke-width="0.75" /> <line x1="941.7" y1="125.3" x2="1021.5" y2="103.7" stroke="#38bdf8" stroke-opacity="0.069" stroke-width="0.75" /> <line x1="941.7" y1="125.3" x2="927.1" y2="130.5" stroke="#38bdf8" stroke-opacity="0.241" stroke-width="0.75" /> <line x1="941.7" y1="125.3" x2="982.7" y2="151.9" stroke="#38bdf8" stroke-opacity="0.156" stroke-width="0.75" /> <line x1="941.7" y1="125.3" x2="1002.8" y2="42.7" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="1021.5" y1="103.7" x2="927.1" y2="130.5" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="1021.5" y1="103.7" x2="982.7" y2="151.9" stroke="#38bdf8" stroke-opacity="0.122" stroke-width="0.75" /> <line x1="1021.5" y1="103.7" x2="1100.5" y2="66.3" stroke="#38bdf8" stroke-opacity="0.058" stroke-width="0.75" /> <line x1="1021.5" y1="103.7" x2="1002.8" y2="42.7" stroke="#38bdf8" stroke-opacity="0.118" stroke-width="0.75" /> <line x1="200.0" y1="59.9" x2="286.6" y2="42.7" stroke="#38bdf8" stroke-opacity="0.055" stroke-width="0.75" /> <line x1="610.7" y1="47.7" x2="587.2" y2="53.0" stroke="#38bdf8" stroke-opacity="0.219" stroke-width="0.75" /> <line x1="927.1" y1="130.5" x2="982.7" y2="151.9" stroke="#38bdf8" stroke-opacity="0.129" stroke-width="0.75" /> <line x1="632.6" y1="267.8" x2="644.1" y2="219.7" stroke="#38bdf8" stroke-opacity="0.154" stroke-width="0.75" /> <line x1="632.6" y1="267.8" x2="643.9" y2="205.8" stroke="#38bdf8" stroke-opacity="0.120" stroke-width="0.75" /> <line x1="368.7" y1="64.5" x2="308.2" y2="85.2" stroke="#38bdf8" stroke-opacity="0.117" stroke-width="0.75" /> <line x1="368.7" y1="64.5" x2="317.7" y2="41.0" stroke="#38bdf8" stroke-opacity="0.137" stroke-width="0.75" /> <line x1="368.7" y1="64.5" x2="286.6" y2="42.7" stroke="#38bdf8" stroke-opacity="0.064" stroke-width="0.75" /> <line x1="1128.5" y1="215.5" x2="1080.4" y2="213.8" stroke="#38bdf8" stroke-opacity="0.157" stroke-width="0.75" /> <line x1="1128.5" y1="215.5" x2="1154.6" y2="187.5" stroke="#38bdf8" stroke-opacity="0.183" stroke-width="0.75" /> <line x1="644.1" y1="219.7" x2="643.9" y2="205.8" stroke="#38bdf8" stroke-opacity="0.245" stroke-width="0.75" /> <line x1="308.2" y1="85.2" x2="317.7" y2="41.0" stroke="#38bdf8" stroke-opacity="0.165" stroke-width="0.75" /> <line x1="308.2" y1="85.2" x2="286.6" y2="42.7" stroke="#38bdf8" stroke-opacity="0.159" stroke-width="0.75" /> <line x1="1100.5" y1="66.3" x2="1002.8" y2="42.7" stroke="#38bdf8" stroke-opacity="0.050" stroke-width="0.75" /> <line x1="1080.4" y1="213.8" x2="1154.6" y2="187.5" stroke="#38bdf8" stroke-opacity="0.080" stroke-width="0.75" /> <line x1="317.7" y1="41.0" x2="286.6" y2="42.7" stroke="#38bdf8" stroke-opacity="0.201" stroke-width="0.75" />
+    <circle cx="756.2" cy="31.3" r="2.1" fill="#38bdf8" fill-opacity="0.42" filter="url(#glow-light)" /> <circle cx="797.9" cy="248.0" r="1.7" fill="#38bdf8" fill-opacity="0.53" filter="url(#glow-light)" /> <circle cx="144.9" cy="83.2" r="2.7" fill="#f43f5e" fill-opacity="0.61" filter="url(#glow-light)" /> <circle cx="509.9" cy="137.3" r="2.1" fill="#818cf8" fill-opacity="0.78" filter="url(#glow-light)" /> <circle cx="821.9" cy="110.1" r="1.8" fill="#c084fc" fill-opacity="0.83" filter="url(#glow-light)" /> <circle cx="154.5" cy="120.0" r="2.2" fill="#c084fc" fill-opacity="0.49" filter="url(#glow-light)" /> <circle cx="944.0" cy="207.4" r="2.6" fill="#34d399" fill-opacity="0.84" filter="url(#glow-light)" /> <circle cx="128.3" cy="98.3" r="2.8" fill="#c084fc" fill-opacity="0.79" filter="url(#glow-light)" /> <circle cx="686.6" cy="201.1" r="1.6" fill="#c084fc" fill-opacity="0.43" filter="url(#glow-light)" /> <circle cx="1143.4" cy="238.8" r="3.2" fill="#34d399" fill-opacity="0.51" filter="url(#glow-light)" /> <circle cx="752.0" cy="116.2" r="2.2" fill="#c084fc" fill-opacity="0.42" filter="url(#glow-light)" /> <circle cx="826.0" cy="195.9" r="1.6" fill="#f43f5e" fill-opacity="0.65" filter="url(#glow-light)" /> <circle cx="856.6" cy="65.9" r="2.3" fill="#f43f5e" fill-opacity="0.84" filter="url(#glow-light)" /> <circle cx="286.0" cy="106.1" r="3.0" fill="#38bdf8" fill-opacity="0.33" filter="url(#glow-light)" /> <circle cx="941.7" cy="125.3" r="1.6" fill="#f43f5e" fill-opacity="0.80" filter="url(#glow-light)" /> <circle cx="1021.5" cy="103.7" r="2.8" fill="#34d399" fill-opacity="0.52" filter="url(#glow-light)" /> <circle cx="200.0" cy="59.9" r="3.0" fill="#f43f5e" fill-opacity="0.60" filter="url(#glow-light)" /> <circle cx="519.8" cy="170.9" r="2.2" fill="#818cf8" fill-opacity="0.85" filter="url(#glow-light)" /> <circle cx="610.7" cy="47.7" r="1.6" fill="#818cf8" fill-opacity="0.36" filter="url(#glow-light)" /> <circle cx="927.1" cy="130.5" r="1.6" fill="#34d399" fill-opacity="0.51" filter="url(#glow-light)" /> <circle cx="632.6" cy="267.8" r="3.2" fill="#38bdf8" fill-opacity="0.31" filter="url(#glow-light)" /> <circle cx="803.5" cy="159.2" r="2.0" fill="#38bdf8" fill-opacity="0.65" filter="url(#glow-light)" /> <circle cx="368.7" cy="64.5" r="1.5" fill="#c084fc" fill-opacity="0.70" filter="url(#glow-light)" /> <circle cx="1128.5" cy="215.5" r="2.5" fill="#c084fc" fill-opacity="0.36" filter="url(#glow-light)" /> <circle cx="982.7" cy="151.9" r="1.9" fill="#818cf8" fill-opacity="0.51" filter="url(#glow-light)" /> <circle cx="644.1" cy="219.7" r="2.6" fill="#c084fc" fill-opacity="0.30" filter="url(#glow-light)" /> <circle cx="587.2" cy="53.0" r="2.2" fill="#c084fc" fill-opacity="0.84" filter="url(#glow-light)" /> <circle cx="308.2" cy="85.2" r="2.6" fill="#34d399" fill-opacity="0.34" filter="url(#glow-light)" /> <circle cx="953.9" cy="269.5" r="2.6" fill="#34d399" fill-opacity="0.37" filter="url(#glow-light)" /> <circle cx="1100.5" cy="66.3" r="2.6" fill="#818cf8" fill-opacity="0.63" filter="url(#glow-light)" /> <circle cx="1080.4" cy="213.8" r="2.9" fill="#34d399" fill-opacity="0.69" filter="url(#glow-light)" /> <circle cx="1154.6" cy="187.5" r="2.4" fill="#38bdf8" fill-opacity="0.58" filter="url(#glow-light)" /> <circle cx="317.7" cy="41.0" r="1.5" fill="#f43f5e" fill-opacity="0.60" filter="url(#glow-light)" /> <circle cx="286.6" cy="42.7" r="2.8" fill="#38bdf8" fill-opacity="0.43" filter="url(#glow-light)" /> <circle cx="1002.8" cy="42.7" r="2.0" fill="#818cf8" fill-opacity="0.67" filter="url(#glow-light)" /> <circle cx="643.9" cy="205.8" r="3.3" fill="#818cf8" fill-opacity="0.62" filter="url(#glow-light)" />
+  </g>
+
+  <!-- High-tech HUD corner marks -->
+  <path d="M 18,32 L 18,18 L 32,18" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 1182,32 L 1182,18 L 1168,18" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 18,268 L 18,282 L 32,282" fill="none" stroke="#818cf8" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M 1182,268 L 1182,282 L 1168,282" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linecap="round" />
+
+  <!-- Center Content -->
+  <!-- Top Terminal Logline -->
+  <g transform="translate(600.0, 62)">
+    <rect x="-195" y="-14" width="390" height="26" rx="13" fill="#0b1329" fill-opacity="0.85" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="1" />
+    <circle cx="-176" cy="-1" r="3.5" fill="#34d399" filter="url(#glow-light)" />
+    <text x="-162" y="3" fill="#94a3b8" font-size="11.5" font-weight="500" class="mono" letter-spacing="1.5">SYSTEM // ODYSSEY LOG · CSE UNDERGRAD</text>
+  </g>
+
+  <!-- Main Hero Title -->
+  <text x="600.0" y="136" text-anchor="middle" class="sans" font-size="52" font-weight="900" letter-spacing="4" fill="url(#title-grad)" filter="url(#glow-strong)">MAHI PATNI</text>
+
+  <!-- Thematic Subtitle -->
+  <text x="600.0" y="174" text-anchor="middle" class="mono" font-size="15" font-weight="500" letter-spacing="3" fill="#93c5fd">
+    WRITING MY STORY IN PIXELS ✦ VOYAGE THROUGH CODE &amp; REASON
+  </text>
+
+  <!-- Tagline Pillars -->
+  <g transform="translate(600.0, 225)">
+    <!-- Pill 1: Physics-Informed ML -->
+    <g transform="translate(-250, 0)">
+      <rect x="-95" y="-13" width="190" height="26" rx="6" fill="#0f172a" fill-opacity="0.9" stroke="#38bdf8" stroke-opacity="0.4" stroke-width="1" />
+      <text x="0" y="4" text-anchor="middle" class="mono" font-size="11" font-weight="600" fill="#38bdf8" letter-spacing="1">⚛ PHYSICS-INFORMED ML</text>
+    </g>
+
+    <!-- Pill 2: Multi-Agent Systems -->
+    <g transform="translate(0, 0)">
+      <rect x="-95" y="-13" width="190" height="26" rx="6" fill="#0f172a" fill-opacity="0.9" stroke="#818cf8" stroke-opacity="0.4" stroke-width="1" />
+      <text x="0" y="4" text-anchor="middle" class="mono" font-size="11" font-weight="600" fill="#a5b4fc" letter-spacing="1">🛰 MULTI-AGENT SWARMS</text>
+    </g>
+
+    <!-- Pill 3: Immersive 3D Experiences -->
+    <g transform="translate(250, 0)">
+      <rect x="-95" y="-13" width="190" height="26" rx="6" fill="#0f172a" fill-opacity="0.9" stroke="#c084fc" stroke-opacity="0.4" stroke-width="1" />
+      <text x="0" y="4" text-anchor="middle" class="mono" font-size="11" font-weight="600" fill="#e9d5ff" letter-spacing="1">🌊 IMMERSIVE 3D WORLDS</text>
+    </g>
+  </g>
+
+  <!-- Subtle bottom horizon line with coordinates -->
+  <line x1="120" y1="276" x2="1080" y2="276" stroke="url(#border-grad)" stroke-width="0.8" />
+  <circle cx="600.0" cy="276" r="2.5" fill="#38bdf8" filter="url(#glow-light)" />
+</svg>
