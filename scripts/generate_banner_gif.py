@@ -240,7 +240,7 @@ def main():
 
         elif star_type == "cross":
             # Classic 4-point retro cross star
-            core = np.array([255.0, 140.0 + 115.0 * p, 150.0 + 105.0 * p], dtype=np.float32)
+            core = np.array([255.0, 140.0 + 115.0 * p, 150.0 + 105.0 * p], dtype=np.float32) * p
             put_px(x, y, core)
             inner = np.array([255.0, 50.0 + 50.0 * p, 75.0 + 40.0 * p], dtype=np.float32) * p
             for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
@@ -256,9 +256,9 @@ def main():
 
         elif star_type == "diamond":
             # 8-bit radiant diamond sparkle
-            core = np.array([255.0, 240.0, 245.0], dtype=np.float32)
+            core = np.array([255.0, 240.0, 245.0], dtype=np.float32) * p
             put_px(x, y, core)
-            ring = np.array([255.0, 85.0 + 80.0 * p, 105.0 + 70.0 * p], dtype=np.float32)
+            ring = np.array([255.0, 85.0 + 80.0 * p, 105.0 + 70.0 * p], dtype=np.float32) * p
             for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
                 put_px(x + dx, y + dy, ring)
             diag = np.array([185.0, 30.0, 50.0], dtype=np.float32) * p
@@ -341,13 +341,10 @@ def main():
 
         # 4. Upper face (vivid coral [255, 65, 95]) with elegant specular shimmer sweep
         # Slanted shimmer beam sweeping across upper letters from left to right:
-        # Letters span x: 94..346. Beam sweeps from x=30 to x=410.
-        x_beam = 30.0 + 380.0 * (frame_idx / NUM_FRAMES)
-        # Seamless loop taper: smooth sin envelope so seam at frame 19->0 is 100% continuous
-        beam_taper = math.sin(math.pi * frame_idx / NUM_FRAMES)
-        # Compute shimmer weight per pixel
+        # Letters span x: 94..346. Beam sweeps from x=-30 to x=470 (outside text at frames 0 and 19 for 100% seamless looping).
+        x_beam = -30.0 + 500.0 * (frame_idx / NUM_FRAMES)
         beam_dist = (X - x_beam) + (Y - 50.0) * 0.38
-        beam_weight = np.exp(-(beam_dist ** 2) / (2.0 * (18.0 ** 2))) * beam_taper
+        beam_weight = np.exp(-(beam_dist ** 2) / (2.0 * (18.0 ** 2)))
 
         # Base coral: [255, 65, 95], Highlight specular: [255, 220, 230]
         coral = np.array([255.0, 65.0, 95.0], dtype=np.float32)
