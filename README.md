@@ -216,3 +216,4 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 <sub>Every commit is a pixel. Every pixel tells a story. &nbsp;·&nbsp; Log Pose Coordinates: 18°N 73°E</sub>
 
 </div>
+<!-- co-author: pair extraordinaire unlock -->
