@@ -1,70 +1,115 @@
 #!/usr/bin/env python3
 """
-Generate retro pixel heart health-bar tags for Mahi Patni's GitHub Profile.
-Based on the custom pixel-art tag reference provided by the user.
+Generate flawless retro pixel heart health-bar tags for Mahi Patni's GitHub Profile.
 
-Creates:
-- assets/tags/tag-followers.png
-- assets/tags/tag-voyagers.png
-- assets/tags/tag-linkedin.png
-- assets/tags/tag-mail.png
-- assets/tags/tag-location.png
-- assets/tags/tag-status.png
+Features:
+- 100% symmetrical, unclipped retro 8-bit heart with specular shine highlight.
+- Smooth black borders and solid white interior box.
+- Pixel typography using RawPixel.otf with dark labels (#080406) and crimson values (#e11d48).
+- High-resolution 2x/3x Retina rendering (8px blocks, 88px height) for razor-sharp display at height="38".
 """
 
+import math
 import os
-import numpy as np
 from PIL import Image, ImageDraw, ImageFont
-from collections import deque
 
-def prepare_base_tag():
-    ref_path = "/Users/mahipatni/.gemini/antigravity/brain/26c58cb5-4bcf-44a2-8939-c5c8152856d8/.user_uploaded/media_1793889252022_a21f7f1d.png"
-    im = Image.open(ref_path).convert("RGBA")
-    
-    # Crop clean tag boundaries (excluding screenshot crop handles on the right)
-    clean_tag = im.crop((35, 35, 480, 125))
-    arr = np.array(clean_tag)
-    
-    # Flood-fill transparency from outside edges
-    h, w = arr.shape[:2]
-    visited = np.zeros((h, w), dtype=bool)
-    q = deque()
-    
-    for y in range(h):
-        for x in [0, 1, w-2, w-1]:
-            if arr[y, x, :3].mean() > 200:
-                q.append((y, x))
-                visited[y, x] = True
+HEART_GRID = [
+    [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0],
+    [0, 1, 2, 2, 2, 1, 0, 1, 2, 2, 2, 1, 0],
+    [1, 2, 3, 3, 2, 2, 1, 2, 2, 2, 2, 2, 1], # row 2: top border of bar connects at col 12
+    [1, 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1],
+    [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1],
+    [0, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 0],
+    [0, 0, 1, 2, 2, 2, 2, 2, 2, 2, 1, 0, 0],
+    [0, 0, 0, 1, 2, 2, 2, 2, 2, 1, 0, 0, 0],
+    [0, 0, 0, 0, 1, 2, 2, 2, 1, 0, 0, 0, 0], # row 8: bottom border of bar connects at col 8
+    [0, 0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0, 0],
+    [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0],
+]
 
-    for x in range(w):
-        for y in [0, 1, h-2, h-1]:
-            if arr[y, x, :3].mean() > 200 and not visited[y, x]:
-                q.append((y, x))
-                visited[y, x] = True
+BLOCK = 8
+H_BLOCKS = len(HEART_GRID)  # 11 blocks high (88px)
+W_HEART = len(HEART_GRID[0])  # 13 blocks wide (104px)
 
-    while q:
-        cy, cx = q.popleft()
-        arr[cy, cx, 3] = 0
-        for ny, nx in [(cy-1, cx), (cy+1, cx), (cy, cx-1), (cy, cx+1)]:
-            if 0 <= ny < h and 0 <= nx < w and not visited[ny, nx]:
-                if arr[ny, nx, :3].mean() > 160:
-                    visited[ny, nx] = True
-                    q.append((ny, nx))
-                    
-    return Image.fromarray(arr)
+def render_tag(label, val, font):
+    b_l = font.getbbox(label)
+    w_l = b_l[2] - b_l[0]
+    b_v = font.getbbox(val)
+    w_v = b_v[2] - b_v[0]
+    sep = " · "
+    b_s = font.getbbox(sep)
+    w_s = b_s[2] - b_s[0]
+    
+    content_w = w_l + w_s + w_v
+    pad_px = 24  # 3 blocks horizontal padding
+    box_w_px = content_w + pad_px * 2
+    inner_blocks = math.ceil(box_w_px / BLOCK)
+    total_blocks_w = W_HEART + inner_blocks + 1
+    
+    img_w = total_blocks_w * BLOCK
+    img_h = H_BLOCKS * BLOCK
+    
+    tag = Image.new("RGBA", (img_w, img_h), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(tag)
+    
+    # 1. Fill white interior of bar (rows 3 to 7)
+    for r in range(3, 8):
+        max_c = max([c for c, v in enumerate(HEART_GRID[r]) if v != 0])
+        start_c = max_c + 1
+        x1 = start_c * BLOCK
+        x2 = (total_blocks_w - 1) * BLOCK
+        y1 = r * BLOCK
+        y2 = (r + 1) * BLOCK
+        draw.rectangle([x1, y1, x2 - 1, y2 - 1], fill=(255, 255, 255, 255))
+        
+    # 2. Draw bar black borders
+    # Top border: row 2 from col 12 to total_blocks_w - 1
+    draw.rectangle([12 * BLOCK, 2 * BLOCK, (total_blocks_w - 1) * BLOCK, 3 * BLOCK - 1], fill=(0, 0, 0, 255))
+    
+    # Bottom border: row 8 from col 8 to total_blocks_w - 1
+    draw.rectangle([8 * BLOCK, 8 * BLOCK, (total_blocks_w - 1) * BLOCK, 9 * BLOCK - 1], fill=(0, 0, 0, 255))
+    
+    # Right border: col total_blocks_w - 1 from row 2 to 8
+    draw.rectangle([(total_blocks_w - 1) * BLOCK, 2 * BLOCK, total_blocks_w * BLOCK - 1, 9 * BLOCK - 1], fill=(0, 0, 0, 255))
+    
+    # 3. Draw clean symmetrical pixel heart
+    colors = {
+        0: None,
+        1: (0, 0, 0, 255),       # black outline
+        2: (225, 29, 72, 255),   # #e11d48 crimson red
+        3: (255, 255, 255, 255), # white specular shine
+    }
+    for r in range(H_BLOCKS):
+        for c in range(W_HEART):
+            v = HEART_GRID[r][c]
+            if v != 0:
+                x = c * BLOCK
+                y = r * BLOCK
+                draw.rectangle([x, y, x + BLOCK - 1, y + BLOCK - 1], fill=colors[v])
+                
+    # 4. Draw Typography
+    actual_inner_w = (total_blocks_w - 1 - W_HEART) * BLOCK
+    start_x = W_HEART * BLOCK + (actual_inner_w - content_w) // 2
+    
+    h_l = b_l[3] - b_l[1]
+    ty = 3 * BLOCK + (5 * BLOCK - h_l) // 2 - b_l[1]
+    
+    cur_x = start_x
+    draw.text((cur_x, ty), label, font=font, fill="#080406")
+    cur_x += w_l
+    draw.text((cur_x, ty), sep, font=font, fill="#71717a")
+    cur_x += w_s
+    draw.text((cur_x, ty), val, font=font, fill="#e11d48")
+    
+    return tag
 
 def main():
     repo_root = "/Users/mahipatni/Antigravity/profile"
     tags_dir = os.path.join(repo_root, "assets", "tags")
     os.makedirs(tags_dir, exist_ok=True)
     
-    base_tag = prepare_base_tag()
-    left_cap = base_tag.crop((0, 0, 98, 90))
-    right_cap = base_tag.crop((435, 0, 444, 90))
-    center_slice = base_tag.crop((200, 0, 201, 90))
-    
     font_path = os.path.join(repo_root, "assets", "fonts", "RawPixel.otf")
-    font = ImageFont.truetype(font_path, 24)
+    font = ImageFont.truetype(font_path, 28)
     
     badges = [
         ("followers", "5", "tag-followers.png"),
@@ -75,36 +120,9 @@ def main():
         ("Open to", "Collaborate & Build", "tag-status.png"),
     ]
     
-    print("Generating pixel heart tags...")
+    print("Generating pure symmetrical pixel tags...")
     for label, val, filename in badges:
-        b_l = font.getbbox(label)
-        w_l = b_l[2] - b_l[0]
-        b_v = font.getbbox(val)
-        w_v = b_v[2] - b_v[0]
-        sep = " · "
-        b_s = font.getbbox(sep)
-        w_s = b_s[2] - b_s[0]
-        
-        pad_h = 18
-        inner_w = w_l + w_s + w_v + pad_h * 2
-        total_w = left_cap.width + inner_w + right_cap.width
-        
-        tag = Image.new("RGBA", (total_w, 90), (0, 0, 0, 0))
-        tag.paste(left_cap, (0, 0))
-        tag.paste(center_slice.resize((inner_w, 90), Image.Resampling.NEAREST), (left_cap.width, 0))
-        tag.paste(right_cap, (left_cap.width + inner_w, 0))
-        
-        draw = ImageDraw.Draw(tag)
-        h_l = b_l[3] - b_l[1]
-        ty = 21 + (52 - h_l) // 2 - b_l[1]
-        
-        cur_x = left_cap.width + pad_h
-        draw.text((cur_x, ty), label, font=font, fill="#080406")
-        cur_x += w_l
-        draw.text((cur_x, ty), sep, font=font, fill="#71717a")
-        cur_x += w_s
-        draw.text((cur_x, ty), val, font=font, fill="#e11d48")
-        
+        tag = render_tag(label, val, font)
         out_file = os.path.join(tags_dir, filename)
         tag.save(out_file)
         print(f"  ✓ Saved {filename} ({tag.size[0]}x{tag.size[1]})")

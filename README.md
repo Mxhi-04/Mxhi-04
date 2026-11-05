@@ -9,13 +9,13 @@
 </p>
 
 <p>
-<a href="https://github.com/Mxhi-04?tab=followers"><img src="assets/tags/tag-followers.png" height="28" alt="Followers"></a>
-<a href="https://hits.sh/github.com/Mxhi-04/"><img src="assets/tags/tag-voyagers.png" height="28" alt="Voyagers Charted"></a>
-<a href="https://www.linkedin.com/in/mahi-patni-00a977376/" target="_blank"><img src="assets/tags/tag-linkedin.png" height="28" alt="LinkedIn"></a>
-<a href="mailto:mahipatni1828@gmail.com"><img src="assets/tags/tag-mail.png" height="28" alt="Mail"></a>
-<img src="assets/tags/tag-location.png" height="28" alt="Location">
+<a href="https://github.com/Mxhi-04?tab=followers"><img src="assets/tags/tag-followers.png" height="36" alt="Followers"></a>
+<a href="https://hits.sh/github.com/Mxhi-04/"><img src="assets/tags/tag-voyagers.png" height="36" alt="Voyagers Charted"></a>
+<a href="https://www.linkedin.com/in/mahi-patni-00a977376/" target="_blank"><img src="assets/tags/tag-linkedin.png" height="36" alt="LinkedIn"></a>
+<a href="mailto:mahipatni1828@gmail.com"><img src="assets/tags/tag-mail.png" height="36" alt="Mail"></a>
+<img src="assets/tags/tag-location.png" height="36" alt="Location">
 <br>
-<img src="assets/tags/tag-status.png" height="28" alt="Open to Collaborate & Build">
+<img src="assets/tags/tag-status.png" height="36" alt="Open to Collaborate & Build">
 </p>
 
 </div>
