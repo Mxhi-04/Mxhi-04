@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/mahi-patni-banner-v2.gif" width="100%" alt="Mahi Patni">
+<img src="assets/mahi-patni-banner-v3.gif" width="100%" alt="Mahi Patni">
 
 <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=2800&pause=900&color=E11D48&center=true&vCenter=true&width=820&lines=Crafting+little+worlds%2C+pixel+by+pixel+%E2%9C%A6%3BPhysics-Informed+AI+%C2%B7+Uncertainty-Aware+ML%3BDecentralized+Multi-Agent+Dispatch+%26+SOS%3BInteractive+3D+Worlds+%C2%B7+Navigating+the+Grand+Line%3BCSE+Undergrad+%C2%B7+Forever+Curious." alt="Typing Intro">
 
