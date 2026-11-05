@@ -62,7 +62,7 @@ def main():
     left_x = 90
     y_mahi = 50
     y_patni = 160
-    sub_y = 285
+    sub_y = 278
 
     mask_mahi = Image.new("L", (target_w, target_h), 0)
     d_m = ImageDraw.Draw(mask_mahi)
@@ -125,7 +125,7 @@ def main():
         'X': ['#..#', '#..#', '.##.', '#..#', '#..#'],
         'Y': ['#..#', '#..#', '####', '...#', '###.'],
         'Z': ['####', '...#', '.##.', '#...', '####'],
-        ' ': ['..', '..', '..', '..', '..'],
+        ' ': ['.....', '.....', '.....', '.....', '.....'],
         ',': ['..', '..', '..', '.#', '.#', '#.'],
         '.': ['..', '..', '..', '..', '.#'],
     }
@@ -158,8 +158,9 @@ def main():
     tetric_img = render_tetric_bitmap(sub_text, block_size=3)
     tw, th = tetric_img.size
 
-    pill_pad_x = 16
-    pill_pad_y = 7
+    # Spacious, un-congested red box
+    pill_pad_x = 28
+    pill_pad_y = 12
     pill_w = tw + pill_pad_x * 2
     pill_h = th + pill_pad_y * 2
     pill_left = left_x - 4
@@ -301,12 +302,14 @@ def main():
         optimize=True
     )
 
-    # Copy to v2 and v3 assets for immediate cache busting
+    # Copy to v2, v3, and v4 assets for immediate cache busting
     import shutil
     v2_gif_path = os.path.join(repo_root, "assets", "mahi-patni-banner-v2.gif")
     v3_gif_path = os.path.join(repo_root, "assets", "mahi-patni-banner-v3.gif")
+    v4_gif_path = os.path.join(repo_root, "assets", "mahi-patni-banner-v4.gif")
     shutil.copy2(output_gif_path, v2_gif_path)
     shutil.copy2(output_gif_path, v3_gif_path)
+    shutil.copy2(output_gif_path, v4_gif_path)
 
     preview_artifact = "/Users/mahipatni/.gemini/antigravity/brain/4a57e73e-4d47-428f-a729-78d0704bc591/banner-preview.gif"
     if os.path.exists(os.path.dirname(preview_artifact)):
