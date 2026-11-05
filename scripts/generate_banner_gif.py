@@ -303,10 +303,13 @@ def main():
         optimize=True
     )
 
-    # Copy to preview artifact
+    # Copy to v2 asset for cache busting and preview artifact
+    v2_gif_path = os.path.join(repo_root, "assets", "mahi-patni-banner-v2.gif")
+    import shutil
+    shutil.copy2(output_gif_path, v2_gif_path)
+
     preview_artifact = "/Users/mahipatni/.gemini/antigravity/brain/4a57e73e-4d47-428f-a729-78d0704bc591/banner-preview.gif"
     if os.path.exists(os.path.dirname(preview_artifact)):
-        import shutil
         shutil.copy2(output_gif_path, preview_artifact)
         print(f"Copied preview to: {preview_artifact}")
 
