@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 """
-Gentle, Smooth Animated Banner GIF Generator for Mahi Patni's GitHub Profile.
+Gentle Animated Banner GIF Generator for Mahi Patni's GitHub Profile.
 
-Adjusted per user feedback:
-1. Softer Glow: Removed harsh artificial bloom halos to eliminate contour banding.
-2. Decreased Pulse: Subtle, organic breathing amplitude (~8-9% luminance modulation).
-3. Decreased Frequency: Slower, tranquil 3.6-second loop (24 frames @ 150ms/frame).
-4. Twinkling Sparkles: Delicate 1-3 pixel retro star glints that twinkle asynchronously.
-5. Subtle Name Animation: Light specular shimmer sweep and gentle neon aura across 'MAHI PATNI'.
-6. Full 1200x380 resolution, optimized palette, seamless loop.
+Refinements:
+1. Subtly defined borders on the square pixels of the stars.
+2. Increased density of twinkling retro red pixel sparkles (45 total).
+3. Soft star glow with low-amplitude breathing (~8.5%).
+4. Tranquil 3.6-second loop (24 frames @ 150ms).
+5. Elegant specular shimmer sweep and neon aura across 'MAHI PATNI'.
+6. 1200x380 resolution, seamless loop, optimized palette (~2.3 MB).
 """
 
 import math
 import os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import scipy.ndimage as ndi
 
 def main():
     repo_root = "/Users/mahipatni/Antigravity/profile"
@@ -35,10 +36,7 @@ def main():
     y_offset = (scaled_h - target_h) // 2
     bg_cropped = bg_scaled.crop((0, y_offset, target_w, y_offset + target_h)).convert("RGBA")
 
-    # Dark gradient overlay on the left side:
-    # 0..420: almost solid dark (alpha 235) for maximum contrast
-    # 420..720: smooth quadratic falloff into the starfield
-    # 720..1200: 0 alpha (pure cosmic starry background)
+    # Smooth dark gradient overlay on the left side
     dim_layer = Image.new("RGBA", (target_w, target_h), (0, 0, 0, 0))
     d_dim = ImageDraw.Draw(dim_layer)
     for x in range(target_w):
@@ -117,9 +115,10 @@ def main():
     sub_rgb = arr_sub_layer[:, :, :3]
     exclusion_mask = arr_dilated | (arr_sub_layer[:, :, 3] > 10)
 
-    # ==========================================
-    # 3. EXISTING STARS PULSING (LOW AMPLITUDE)
-    # ==========================================
+    # =======================================================
+    # 3. STAR MASK & SUBTLY DEFINED PIXEL BORDERS
+    # =======================================================
+    gray_bg = arr_bg_base.mean(axis=2)
     r_ch = arr_bg_base[:, :, 0]
     g_ch = arr_bg_base[:, :, 1]
     b_ch = arr_bg_base[:, :, 2]
@@ -127,17 +126,34 @@ def main():
     star_mask[:, :480] = 0.0
     star_mask[exclusion_mask] = 0.0
 
-    # ==========================================
-    # 4. DELICATE TWINKLING SPARKLES
-    # ==========================================
+    # Very slightly define borders between pixel blocks in the stars
+    grad_x = np.abs(ndi.sobel(gray_bg, axis=1))
+    grad_y = np.abs(ndi.sobel(gray_bg, axis=0))
+    grad = np.sqrt(grad_x**2 + grad_y**2)
+    grad_norm = np.clip(grad / 280.0, 0.0, 1.0) * star_mask
+    border_sub = (grad_norm * 18.0)[:, :, np.newaxis]
+    arr_bg_defined = np.clip(arr_bg_base - border_sub, 0.0, 255.0)
+
+    # =======================================================
+    # 4. INCREASED DENSITY OF RED PIXEL SPARKLES (45 TOTAL)
+    # =======================================================
     sparkles = [
-        (140,  30, 0.0), (280,  22, 1.8), (440,  28, 3.6),
-        (520, 110, 0.9), (490, 240, 2.7), (580, 180, 4.5),
-        (680,  60, 1.2), (780,  35, 3.1), (880,  55, 5.0),
-        (980,  30, 0.5), (1080, 65, 2.4), (1160, 40, 4.2),
-        (720, 190, 2.0), (840, 160, 3.9), (960, 210, 5.8),
-        (1060,180, 1.5), (1150,220, 3.4), (740, 320, 4.8),
-        (860, 340, 0.7), (990, 310, 2.6), (1120,330, 4.5),
+        # Top sky
+        (140,  28, 0.0, 1), (210,  22, 1.3, 2), (280,  32, 2.7, 1), (360,  18, 4.1, 2), (430,  26, 5.4, 1),
+        # Transition corridor (x: 470..640)
+        (485,  75, 0.8, 2), (530, 120, 2.1, 1), (495, 175, 3.5, 2), (565, 215, 4.8, 1), (510, 265, 0.4, 2),
+        (585,  95, 1.7, 1), (620, 160, 3.1, 2), (590, 240, 4.4, 1), (635, 290, 5.8, 2),
+        # Upper starfield & near top star (x: 650..1180, y: 15..110)
+        (670,  38, 0.5, 1), (725,  20, 1.9, 2), (785,  45, 3.2, 1), (840,  25, 4.6, 2), (895,  48, 5.9, 1),
+        (955,  30, 1.2, 2), (1015, 52, 2.5, 1), (1075, 22, 3.8, 2), (1135, 45, 5.1, 1), (1175, 28, 0.7, 2),
+        # Mid sky & between stars (x: 650..1180, y: 120..250)
+        (685, 135, 2.3, 2), (735, 180, 3.7, 1), (795, 140, 5.0, 2), (850, 195, 0.6, 1), (910, 150, 2.0, 2),
+        (970, 205, 3.3, 1), (1030, 160, 4.7, 2), (1090, 210, 0.2, 1), (1150, 170, 1.6, 2),
+        # Lower sky & near bottom star (x: 650..1180, y: 260..365)
+        (690, 320, 3.0, 1), (745, 270, 4.3, 2), (805, 335, 5.7, 1), (865, 285, 1.1, 2), (925, 340, 2.4, 1),
+        (985, 295, 3.8, 2), (1045, 345, 5.2, 1), (1105, 300, 0.5, 2), (1165, 350, 1.9, 1),
+        # Under subtitle / bottom left
+        (220, 345, 3.6, 1), (340, 340, 5.0, 1), (440, 345, 0.9, 2),
     ]
 
     # ==========================================
@@ -150,37 +166,35 @@ def main():
     rendered_frames = []
     for f_idx in range(NUM_FRAMES):
         theta = 2.0 * math.pi * f_idx / NUM_FRAMES
-
-        # 1. Gentle Star Breathing: Low amplitude (0.085), no harsh bloom
         pulse = math.sin(theta)
         scale_factor = 1.0 + (0.085 * pulse * star_mask)
-        frame_canvas = arr_bg_base * scale_factor[:, :, np.newaxis]
+        frame_canvas = arr_bg_defined * scale_factor[:, :, np.newaxis]
 
-        # 2. Twinkling Retro Red Sparkles
-        for sx, sy, s_phase in sparkles:
+        # Twinkling Retro Red Sparkles
+        for sx, sy, s_phase, s_type in sparkles:
             sp = max(0.0, math.sin(theta + s_phase)) ** 4.0
             if sp > 0.08 and not exclusion_mask[sy, sx]:
                 c_rgb = np.array([255.0, 140.0 + 115.0 * sp, 160.0 + 95.0 * sp]) * sp
                 frame_canvas[sy, sx] = np.maximum(frame_canvas[sy, sx], c_rgb)
-                if sp > 0.5:
-                    arm_rgb = np.array([230.0, 40.0, 70.0]) * (sp - 0.5) / 0.5
+                if s_type == 2 and sp > 0.4:
+                    arm_rgb = np.array([230.0, 40.0, 70.0]) * (sp - 0.4) / 0.6
                     for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
                         if 0 <= sx + dx < target_w and 0 <= sy + dy < target_h:
                             frame_canvas[sy + dy, sx + dx] = np.maximum(frame_canvas[sy + dy, sx + dx], arm_rgb)
 
-        # 3. Soft Neon Aura behind text (gentle breathing)
+        # Soft Neon Aura behind text
         glow_val = 0.36 + 0.05 * math.sin(theta)
         glow_mask_apply = (arr_glow > 0.04) & (~arr_dilated)
         glow_color = np.array([220.0, 25.0, 50.0], dtype=np.float32)
         frame_canvas[glow_mask_apply] += (arr_glow[glow_mask_apply, np.newaxis] * glow_val) * glow_color
 
-        # 4. Text Outline
+        # Text Outline
         frame_canvas[arr_outline] = [4.0, 4.0, 4.0]
 
-        # 5. Lower Face
+        # Lower Face
         frame_canvas[lower_face_mask] = [185.0, 15.0, 45.0]
 
-        # 6. Upper Face with subtle specular sweep
+        # Upper Face with subtle specular sweep
         x_beam = -40.0 + 520.0 * (f_idx / NUM_FRAMES)
         beam_dist = (X - x_beam) + (Y - 50.0) * 0.35
         beam_weight = np.exp(-(beam_dist ** 2) / (2.0 * (24.0 ** 2)))
@@ -190,16 +204,13 @@ def main():
         shimmer_rgb = (1.0 - 0.40 * beam_weight[:, :, np.newaxis]) * coral + (0.40 * beam_weight[:, :, np.newaxis]) * shimmer_tint
         frame_canvas[upper_face_mask] = shimmer_rgb[upper_face_mask]
 
-        # 7. Subtitle
+        # Subtitle
         frame_canvas = frame_canvas * (1.0 - sub_alpha) + sub_rgb * sub_alpha
         frame_canvas = np.clip(frame_canvas, 0.0, 255.0)
 
         rendered_frames.append(Image.fromarray(np.uint8(frame_canvas)))
 
-    # ==========================================
-    # 6. MASTER PALETTE QUANTIZATION & GIF SAVE
-    # ==========================================
-    print("Building high-fidelity master palette from keyframes...")
+    # Master Palette Quantization
     sample_indices = [0, 4, 8, 12, 16, 20]
     palette_canvas = Image.new("RGB", (target_w, target_h * len(sample_indices)))
     for idx, f_idx in enumerate(sample_indices):
@@ -207,13 +218,11 @@ def main():
 
     master_palette = palette_canvas.quantize(colors=256, method=Image.Quantize.MEDIANCUT)
 
-    print("Quantizing all frames with Floyd-Steinberg dithering...")
     quantized_frames = [
         f.quantize(palette=master_palette, dither=Image.Dither.FLOYDSTEINBERG)
         for f in rendered_frames
     ]
 
-    print(f"Saving animated GIF to: {output_gif_path}")
     quantized_frames[0].save(
         output_gif_path,
         save_all=True,
@@ -234,9 +243,8 @@ def main():
     file_size_mb = file_size_bytes / (1024 * 1024)
 
     print("\n" + "=" * 60)
-    print("✨ GENTLE ANIMATED BANNER GIF GENERATION SUCCESSFUL!")
+    print("✨ ANIMATED BANNER GIF GENERATION SUCCESSFUL!")
     print(f"Path: {output_gif_path}")
-    print(f"Loop Length: {NUM_FRAMES * FRAME_DELAY_MS / 1000:.2f}s ({NUM_FRAMES} frames @ {FRAME_DELAY_MS}ms)")
     print(f"File Size: {file_size_mb:.2f} MB")
     print("=" * 60)
 
