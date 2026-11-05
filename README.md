@@ -11,6 +11,7 @@
 <p>
 <a href="https://github.com/Mxhi-04?tab=followers"><img src="https://img.shields.io/github/followers/Mxhi-04?style=flat-square&logo=github&labelColor=080406&color=e11d48&label=followers" alt="Followers"></a>
 <a href="https://hits.sh/github.com/Mxhi-04/"><img src="https://hits.sh/github.com/Mxhi-04.svg?style=flat-square&color=e11d48&labelColor=080406&label=voyagers+charted" alt="Profile Views"></a>
+<a href="https://linkedin.com/in/mahipatni" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Mahi_Patni-0A66C2?style=flat-square&logo=linkedin&logoColor=white&labelColor=080406" alt="LinkedIn"></a>
 <a href="mailto:mahipatni1828@gmail.com"><img src="https://img.shields.io/badge/Mail-mahipatni1828%40gmail.com-ff2a4b?style=flat-square&logo=gmail&logoColor=white&labelColor=080406" alt="Mail"></a>
 <img src="https://img.shields.io/badge/Location-India-e11d48?style=flat-square&logo=googlemaps&logoColor=white&labelColor=080406" alt="Location">
 <img src="https://img.shields.io/badge/Open_to-Collaborate_%26_Build-ff2a4b?style=flat-square&labelColor=080406" alt="Status">
@@ -107,10 +108,10 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 
 <table>
 <tr>
-<td align="center" width="25%"><a href="https://antigravity.google"><img src="https://raw.githubusercontent.com/satiricalguru/satiricalguru/main/assets/icons/antigravity.png" width="60" height="60" alt="Antigravity"></a><br><br><b>01 · Antigravity</b><br><sub>Google — Agentic IDE</sub><br><br><a href="https://antigravity.google"><img src="https://img.shields.io/badge/Antigravity-e11d48?style=flat-square&logo=google&logoColor=white&labelColor=080406&color=e11d48" alt="Antigravity"></a></td>
-<td align="center" width="25%"><a href="https://claude.com/claude-code"><img src="https://raw.githubusercontent.com/satiricalguru/satiricalguru/main/assets/icons/claude.png" width="60" height="60" alt="Claude Code"></a><br><br><b>02 · Claude Code</b><br><sub>Anthropic — Terminal Agent</sub><br><br><a href="https://claude.com/claude-code"><img src="https://img.shields.io/badge/Claude-ff2a4b?style=flat-square&logo=claude&logoColor=white&labelColor=080406&color=ff2a4b" alt="Claude"></a></td>
-<td align="center" width="25%"><a href="https://threejs.org"><img src="https://skillicons.dev/icons?i=threejs&theme=dark" width="60" height="60" alt="Three.js"></a><br><br><b>03 · Three.js</b><br><sub>WebGL &amp; 3D Engine</sub><br><br><a href="https://threejs.org"><img src="https://img.shields.io/badge/Three.js-e11d48?style=flat-square&logo=threedotjs&logoColor=white&labelColor=080406&color=e11d48" alt="Three.js"></a></td>
-<td align="center" width="25%"><a href="https://pytorch.org"><img src="https://skillicons.dev/icons?i=pytorch&theme=dark" width="60" height="60" alt="PyTorch"></a><br><br><b>04 · PyTorch / SciPy</b><br><sub>Scientific AI &amp; Tensors</sub><br><br><a href="https://pytorch.org"><img src="https://img.shields.io/badge/PyTorch-ff2a4b?style=flat-square&logo=pytorch&logoColor=white&labelColor=080406&color=ff2a4b" alt="PyTorch"></a></td>
+<td align="center" width="25%"><a href="https://antigravity.google"><img src="assets/icons/antigravity.png" width="60" height="60" alt="Antigravity"></a><br><br><b>01 · Antigravity</b><br><sub>Google — Agentic IDE</sub><br><br><a href="https://antigravity.google"><img src="https://img.shields.io/badge/Antigravity-e11d48?style=flat-square&logo=google&logoColor=white&labelColor=080406&color=e11d48" alt="Antigravity"></a></td>
+<td align="center" width="25%"><a href="https://claude.com/claude-code"><img src="assets/icons/claude.png" width="60" height="60" alt="Claude Code"></a><br><br><b>02 · Claude Code</b><br><sub>Anthropic — Terminal Agent</sub><br><br><a href="https://claude.com/claude-code"><img src="https://img.shields.io/badge/Claude-ff2a4b?style=flat-square&logo=claude&logoColor=white&labelColor=080406&color=ff2a4b" alt="Claude"></a></td>
+<td align="center" width="25%"><a href="https://openai.com"><img src="assets/icons/chatgpt.png" width="60" height="60" alt="ChatGPT Codex"></a><br><br><b>03 · ChatGPT Codex</b><br><sub>OpenAI — Cloud AI Agent</sub><br><br><a href="https://openai.com"><img src="https://img.shields.io/badge/ChatGPT_Codex-e11d48?style=flat-square&logo=openai&logoColor=white&labelColor=080406&color=e11d48" alt="ChatGPT Codex"></a></td>
+<td align="center" width="25%"><a href="https://github.com"><img src="assets/icons/opencode.png" width="60" height="60" alt="OpenCode"></a><br><br><b>04 · OpenCode</b><br><sub>Open Source — Autonomous Agent</sub><br><br><a href="https://github.com"><img src="https://img.shields.io/badge/OpenCode-ff2a4b?style=flat-square&logo=terminal&logoColor=white&labelColor=080406&color=ff2a4b" alt="OpenCode"></a></td>
 </tr>
 </table>
 
@@ -130,55 +131,31 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 <a href="https://github.com/Mxhi-04"><img src="https://streak-stats.demolab.com/?user=Mxhi-04&hide_border=true&background=080406&stroke=2a0a12&ring=e11d48&fire=ff2a4b&currStreakNum=f8fafc&currStreakLabel=ff2a4b&sideNums=f8fafc&sideLabels=e2d9dc&dates=806c72" width="70%" alt="Streak"></a>
 
 <details>
-<summary><b>Achievements Unlocked</b></summary>
+<summary><b>Achievements Unlocked</b> &nbsp;<sub>(<a href="https://github.com/Mxhi-04?tab=achievements">view live profile</a>)</sub></summary>
 <br>
 
 <table border="0">
 <tr>
-<td align="center" width="16.6%">
-  <a href="https://github.com/Mxhi-04?tab=achievements&achievement=galaxy-brain">
-    <img src="https://github.githubassets.com/assets/galaxy-brain-gold-9c2c03fd1acf.png" width="75" alt="Galaxy Brain" /><br>
-    <b>Galaxy Brain</b><br>
-    <sub>Community &amp; Answers</sub>
-  </a>
-</td>
-<td align="center" width="16.6%">
-  <a href="https://github.com/Mxhi-04?tab=achievements&achievement=pull-shark">
-    <img src="https://github.githubassets.com/assets/pull-shark-silver-0643f87ac9fd.png" width="75" alt="Pull Shark" /><br>
-    <b>Pull Shark</b><br>
-    <sub>Merged PRs</sub>
-  </a>
-</td>
-<td align="center" width="16.6%">
-  <a href="https://github.com/Mxhi-04?tab=achievements&achievement=pair-extraordinaire">
-    <img src="https://github.githubassets.com/assets/pair-extraordinaire-gold-5335a3b8ae7d.png" width="75" alt="Pair Extraordinaire" /><br>
-    <b>Pair Extraordinaire</b><br>
-    <sub>Co-authored Merges</sub>
-  </a>
-</td>
-<td align="center" width="16.6%">
-  <a href="https://github.com/Mxhi-04?tab=achievements&achievement=starstruck">
-    <img src="https://github.githubassets.com/assets/starstruck-default-b6610abad518.png" width="75" alt="Starstruck" /><br>
-    <b>Starstruck</b><br>
-    <sub>Popular Repository</sub>
-  </a>
-</td>
-<td align="center" width="16.6%">
+<td align="center" width="50%">
   <a href="https://github.com/Mxhi-04?tab=achievements&achievement=yolo">
-    <img src="https://github.githubassets.com/assets/yolo-default-be0bbff04951.png" width="75" alt="YOLO" /><br>
+    <img src="https://github.githubassets.com/assets/yolo-default-be0bbff04951.png" width="80" alt="YOLO" /><br>
     <b>YOLO</b><br>
     <sub>Merged Without Review</sub>
   </a>
 </td>
-<td align="center" width="16.6%">
+<td align="center" width="50%">
   <a href="https://github.com/Mxhi-04?tab=achievements&achievement=quickdraw">
-    <img src="https://github.githubassets.com/assets/quickdraw-default-39c6aec8ff89.png" width="75" alt="Quickdraw" /><br>
+    <img src="https://github.githubassets.com/assets/quickdraw-default-39c6aec8ff89.png" width="80" alt="Quickdraw" /><br>
     <b>Quickdraw</b><br>
     <sub>Closed Within 5 Min</sub>
   </a>
 </td>
 </tr>
 </table>
+
+<p align="center">
+  <sub>Verify unlocked badges on <a href="https://github.com/Mxhi-04?tab=achievements">GitHub Profile Achievements</a></sub>
+</p>
 
 </details>
 
@@ -203,6 +180,7 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 **Have a mission across uncharted waters, an AI problem to anchor in physics, or a world to build in code?**
 
 <p>
+<a href="https://linkedin.com/in/mahipatni" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Mahi_Patni-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=080406" alt="LinkedIn"></a>
 <a href="mailto:mahipatni1828@gmail.com"><img src="https://img.shields.io/badge/mahipatni1828%40gmail.com-e11d48?style=for-the-badge&logo=gmail&logoColor=white&labelColor=080406" alt="Direct Email"></a>
 <a href="https://anime-todolist.vercel.app"><img src="https://img.shields.io/badge/Anime_Todo-Live_App-ff2a4b?style=for-the-badge&logo=vercel&logoColor=white&labelColor=080406&color=ff2a4b" alt="Anime Todo Live"></a>
 <a href="https://floodsetu.vercel.app"><img src="https://img.shields.io/badge/FloodSetu-Control_Room-e11d48?style=for-the-badge&logo=vercel&logoColor=white&labelColor=080406&color=e11d48" alt="FloodSetu Live"></a>
@@ -216,5 +194,3 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 <sub>Every commit is a pixel. Every pixel tells a story. &nbsp;·&nbsp; Log Pose Coordinates: 18°N 73°E</sub>
 
 </div>
-<!-- co-author: pair extraordinaire unlock -->
-<!-- pull-shark badge unlock -->
