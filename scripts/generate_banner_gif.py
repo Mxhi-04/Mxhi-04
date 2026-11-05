@@ -97,23 +97,94 @@ def main():
     glow_img = dilated_text.filter(ImageFilter.GaussianBlur(10))
     arr_glow = np.array(glow_img, dtype=np.float32) / 255.0
 
-    # Subtitle badge
-    sub_text = "WRITING MY STORY IN PIXELS ✦ FOREVER CURIOUS"
+    # Subtitle badge & Sparkle sprite (inspired by pixel sparkle sheet row 1 center)
+    sub_text = "Crafting Little Worlds, Pixel by Pixel."
     dummy_sub = ImageDraw.Draw(Image.new("L", (1, 1)))
     bbox_sub = dummy_sub.textbbox((0, 0), sub_text, font=font_sub)
     sub_w = bbox_sub[2] - bbox_sub[0]
     sub_h = bbox_sub[3] - bbox_sub[1]
-    pill_pad_x, pill_pad_y = 16, 5
-    pill_rect = [left_x - 4, sub_y - pill_pad_y, left_x + sub_w + pill_pad_x * 2 - 4, sub_y + sub_h + pill_pad_y]
 
-    sub_layer = Image.new("RGBA", (target_w, target_h), (0, 0, 0, 0))
-    d_sub = ImageDraw.Draw(sub_layer)
-    d_sub.rectangle(pill_rect, fill=(10, 6, 8, 235), outline=(220, 30, 60, 255), width=1)
-    d_sub.text((left_x + pill_pad_x - 4, sub_y), sub_text, font=font_sub, fill=(255, 210, 220, 255))
-    arr_sub_layer = np.array(sub_layer, dtype=np.float32)
-    sub_alpha = arr_sub_layer[:, :, 3:] / 255.0
-    sub_rgb = arr_sub_layer[:, :, :3]
-    exclusion_mask = arr_dilated | (arr_sub_layer[:, :, 3] > 10)
+    sparkle_size = 17
+    sparkle_gap = 10
+    pill_pad_x = 16
+    pill_pad_y = 6
+
+    pill_w = pill_pad_x * 2 + sub_w + sparkle_gap + sparkle_size
+    pill_h = max(sub_h, sparkle_size) + pill_pad_y * 2
+    pill_left = left_x - 4
+    pill_top = sub_y + bbox_sub[1] - pill_pad_y
+    pill_right = pill_left + pill_w
+    pill_bottom = pill_top + pill_h
+    pill_rect = [pill_left, pill_top, pill_right, pill_bottom]
+
+    sp_x = pill_left + pill_pad_x + sub_w + sparkle_gap
+    sp_y = pill_top + (pill_h - sparkle_size) // 2
+
+    # Sparkle sprite template (17x17)
+    sparkle_grid = np.zeros((17, 17), dtype=int)
+    sparkle_grid[8, 8] = 5
+    for dy, dx in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
+        sparkle_grid[8 + dy, 8 + dx] = 4
+    for y in range(17):
+        for x in range(17):
+            m = abs(y - 8) + abs(x - 8)
+            if m == 2:
+                sparkle_grid[y, x] = max(sparkle_grid[y, x], 4)
+            elif m == 3:
+                sparkle_grid[y, x] = max(sparkle_grid[y, x], 3)
+            elif m == 4 and abs(y - 8) <= 2 and abs(x - 8) <= 2:
+                sparkle_grid[y, x] = max(sparkle_grid[y, x], 3)
+    # Rays
+    for y in [2, 3, 4, 12, 13, 14]:
+        sparkle_grid[y, 8] = 2
+    for y in [5, 11]:
+        sparkle_grid[y, 8] = 3
+    for x in [2, 3, 4, 12, 13, 14]:
+        sparkle_grid[8, x] = 2
+    for x in [5, 11]:
+        sparkle_grid[8, x] = 3
+    # Corner accent sparkles from sprite sheet
+    sparkle_grid[2, 3] = 1; sparkle_grid[3, 2] = 1; sparkle_grid[3, 4] = 1; sparkle_grid[4, 3] = 1; sparkle_grid[3, 3] = 4
+    sparkle_grid[3, 13] = 4; sparkle_grid[2, 13] = 1; sparkle_grid[4, 13] = 1; sparkle_grid[3, 12] = 1; sparkle_grid[3, 14] = 1
+    sparkle_grid[13, 3] = 1; sparkle_grid[13, 4] = 1
+    sparkle_grid[13, 13] = 1; sparkle_grid[14, 13] = 1
+
+    def make_sparkle_img(twinkle, t_dot):
+        c5 = [255, 180 + int(75 * twinkle), 200 + int(55 * twinkle), 255]
+        c4 = [255, 45 + int(70 * twinkle), 85 + int(50 * twinkle), 255]
+        c3 = [225 + int(30 * twinkle), 20 + int(30 * twinkle), 65 + int(30 * twinkle), 255]
+        c2 = [190 + int(55 * twinkle), 15 + int(25 * twinkle), 50 + int(25 * twinkle), int(180 + 75 * twinkle)]
+        c1 = [245, 55 + int(80 * t_dot), 95 + int(60 * t_dot), int(150 + 105 * t_dot)]
+        palette = {0: [0, 0, 0, 0], 1: c1, 2: c2, 3: c3, 4: c4, 5: c5}
+        arr = np.zeros((17, 17, 4), dtype=np.uint8)
+        for k, col in palette.items():
+            arr[sparkle_grid == k] = col
+        return Image.fromarray(arr, "RGBA")
+
+    # Pre-render 24 subtitle badge frames with twinkling red sparkle
+    NUM_FRAMES = 24
+    FRAME_DELAY_MS = 150
+    sub_frames_rgb = []
+    sub_frames_alpha = []
+    for f_idx in range(NUM_FRAMES):
+        theta = 2.0 * math.pi * f_idx / NUM_FRAMES
+        twinkle = 0.5 + 0.5 * math.sin(theta)
+        t_dot = 0.5 + 0.5 * math.sin(theta + 1.2)
+        sp_frame = make_sparkle_img(twinkle, t_dot)
+
+        sub_layer = Image.new("RGBA", (target_w, target_h), (0, 0, 0, 0))
+        d_sub = ImageDraw.Draw(sub_layer)
+        d_sub.rectangle(pill_rect, fill=(10, 6, 8, 235), outline=(220, 30, 60, 255), width=1)
+        d_sub.text((pill_left + pill_pad_x, sub_y), sub_text, font=font_sub, fill=(255, 215, 225, 255))
+        sub_layer.paste(sp_frame, (sp_x, sp_y), sp_frame)
+
+        arr_sub_layer = np.array(sub_layer, dtype=np.float32)
+        sub_frames_alpha.append(arr_sub_layer[:, :, 3:] / 255.0)
+        sub_frames_rgb.append(arr_sub_layer[:, :, :3])
+
+    # Exclusion mask covers text and the full subtitle pill
+    exclusion_mask = arr_dilated.copy()
+    exclusion_mask[pill_top:pill_bottom, pill_left:pill_right] = True
 
     # =======================================================
     # 3. STAR MASK & SUBTLY DEFINED PIXEL BORDERS
@@ -159,8 +230,6 @@ def main():
     # ==========================================
     # 5. SYNTHESIS LOOP (24 FRAMES, 150ms/frame = 3.6s)
     # ==========================================
-    NUM_FRAMES = 24
-    FRAME_DELAY_MS = 150
     print(f"Generating {NUM_FRAMES} seamless animation frames at {FRAME_DELAY_MS}ms per frame (3.6s loop)...")
 
     rendered_frames = []
@@ -204,7 +273,9 @@ def main():
         shimmer_rgb = (1.0 - 0.40 * beam_weight[:, :, np.newaxis]) * coral + (0.40 * beam_weight[:, :, np.newaxis]) * shimmer_tint
         frame_canvas[upper_face_mask] = shimmer_rgb[upper_face_mask]
 
-        # Subtitle
+        # Subtitle badge with animated red sparkle
+        sub_alpha = sub_frames_alpha[f_idx]
+        sub_rgb = sub_frames_rgb[f_idx]
         frame_canvas = frame_canvas * (1.0 - sub_alpha) + sub_rgb * sub_alpha
         frame_canvas = np.clip(frame_canvas, 0.0, 255.0)
 

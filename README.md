@@ -2,7 +2,7 @@
 
 <img src="assets/mahi-patni-banner.gif" width="100%" alt="Mahi Patni">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=2800&pause=900&color=E11D48&center=true&vCenter=true&width=820&lines=Writing+my+story+in+pixels+%E2%9C%A6%3BPhysics-Informed+AI+%C2%B7+Uncertainty-Aware+ML%3BDecentralized+Multi-Agent+Dispatch+%26+SOS%3BInteractive+3D+Worlds+%C2%B7+Navigating+the+Grand+Line%3BCSE+Undergrad+%C2%B7+Forever+Curious." alt="Typing Intro">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=2800&pause=900&color=E11D48&center=true&vCenter=true&width=820&lines=Crafting+little+worlds%2C+pixel+by+pixel+%E2%9C%A6%3BPhysics-Informed+AI+%C2%B7+Uncertainty-Aware+ML%3BDecentralized+Multi-Agent+Dispatch+%26+SOS%3BInteractive+3D+Worlds+%C2%B7+Navigating+the+Grand+Line%3BCSE+Undergrad+%C2%B7+Forever+Curious." alt="Typing Intro">
 
 <p>
 <a href="https://anime-todolist.vercel.app"><img src="https://img.shields.io/badge/%E2%9C%A6_EXPLORE_THE_ODYSSEY-anime--todolist.vercel.app-e11d48?style=for-the-badge&labelColor=080406" alt="Anime Todo Live"></a>
@@ -25,7 +25,7 @@
 
 <img align="right" width="140" src="assets/pixel-cat.gif" alt="Pixel Cat" style="margin: 0 0 15px 25px;">
 
-I write my story in pixels — charting the convergence of **physics-informed machine learning**, **autonomous multi-agent coordination**, and **immersive web architectures**.
+Crafting little worlds, pixel by pixel — charting the convergence of **physics-informed machine learning**, **autonomous multi-agent coordination**, and **immersive web architectures**.
 
 - **[Anchor](https://github.com/Mxhi-04/Anchor)**: Physics-informed machine learning for materials science (Asian Paints Alchemy 2026), combining the Fox equation with Gaussian Process residual modeling and conformal prediction intervals.
 - **[FloodSetu](https://github.com/Mxhi-04/FloodSetu)**: Decentralized multi-agent rescue dispatch engine (Code-E-Manipal 2.0), implementing Contract-Net auction protocols and offline SOS resilience.
