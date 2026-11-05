@@ -1,8 +1,8 @@
 <div align="center">
 
-<a href="https://anime-todolist.vercel.app"><img src="assets/mahi-patni-banner.png" width="100%" alt="Mahi Patni"></a>
+<img src="assets/mahi-patni-banner.gif" width="100%" alt="Mahi Patni">
 
-<a href="https://anime-todolist.vercel.app"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=2800&pause=900&color=E11D48&center=true&vCenter=true&width=820&lines=Writing+my+story+in+pixels+%E2%9C%A6%3BPhysics-Informed+AI+%C2%B7+Uncertainty-Aware+ML%3BDecentralized+Multi-Agent+Dispatch+%26+SOS%3BInteractive+3D+Worlds+%C2%B7+Navigating+the+Grand+Line%3BCSE+Undergrad+%C2%B7+Forever+Curious." alt="Typing Intro"></a>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=2800&pause=900&color=E11D48&center=true&vCenter=true&width=820&lines=Writing+my+story+in+pixels+%E2%9C%A6%3BPhysics-Informed+AI+%C2%B7+Uncertainty-Aware+ML%3BDecentralized+Multi-Agent+Dispatch+%26+SOS%3BInteractive+3D+Worlds+%C2%B7+Navigating+the+Grand+Line%3BCSE+Undergrad+%C2%B7+Forever+Curious." alt="Typing Intro">
 
 <p>
 <a href="https://anime-todolist.vercel.app"><img src="https://img.shields.io/badge/%E2%9C%A6_EXPLORE_THE_ODYSSEY-anime--todolist.vercel.app-e11d48?style=for-the-badge&labelColor=080406" alt="Anime Todo Live"></a>
@@ -189,7 +189,7 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 
 <br>
 
-<a href="https://anime-todolist.vercel.app"><img src="assets/odyssey-footer.svg" width="100%" alt="The Grand Line has no end. The voyage continues."></a>
+<img src="assets/odyssey-footer.svg" width="100%" alt="The Grand Line has no end. The voyage continues.">
 
 <sub>Every commit is a pixel. Every pixel tells a story. &nbsp;·&nbsp; Log Pose Coordinates: 18°N 73°E</sub>
 
