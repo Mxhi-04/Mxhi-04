@@ -217,3 +217,4 @@ I write my story in pixels — charting the convergence of **physics-informed ma
 
 </div>
 <!-- co-author: pair extraordinaire unlock -->
+<!-- pull-shark badge unlock -->
