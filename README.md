@@ -11,7 +11,7 @@
 <p>
 <a href="https://github.com/Mxhi-04?tab=followers"><img src="https://img.shields.io/github/followers/Mxhi-04?style=flat-square&logo=github&labelColor=080406&color=e11d48&label=followers" alt="Followers"></a>
 <a href="https://hits.sh/github.com/Mxhi-04/"><img src="https://hits.sh/github.com/Mxhi-04.svg?style=flat-square&color=e11d48&labelColor=080406&label=voyagers+charted" alt="Profile Views"></a>
-<a href="https://www.linkedin.com/in/mahi-patni-00a977376/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Mahi_Patni-0A66C2?style=flat-square&logo=linkedin&logoColor=white&labelColor=080406" alt="LinkedIn"></a>
+<a href="https://www.linkedin.com/in/mahi-patni-00a977376/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Mahi_Patni-e11d48?style=flat-square&logo=linkedin&logoColor=white&labelColor=080406" alt="LinkedIn"></a>
 <a href="mailto:mahipatni1828@gmail.com"><img src="https://img.shields.io/badge/Mail-mahipatni1828%40gmail.com-ff2a4b?style=flat-square&logo=gmail&logoColor=white&labelColor=080406" alt="Mail"></a>
 <img src="https://img.shields.io/badge/Location-India-e11d48?style=flat-square&logo=googlemaps&logoColor=white&labelColor=080406" alt="Location">
 <img src="https://img.shields.io/badge/Open_to-Collaborate_%26_Build-ff2a4b?style=flat-square&labelColor=080406" alt="Status">
@@ -180,7 +180,7 @@ Crafting little worlds, pixel by pixel — charting the convergence of **physics
 **Have a mission across uncharted waters, an AI problem to anchor in physics, or a world to build in code?**
 
 <p>
-<a href="https://www.linkedin.com/in/mahi-patni-00a977376/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Mahi_Patni-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=080406" alt="LinkedIn"></a>
+<a href="https://www.linkedin.com/in/mahi-patni-00a977376/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Mahi_Patni-e11d48?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=080406" alt="LinkedIn"></a>
 <a href="mailto:mahipatni1828@gmail.com"><img src="https://img.shields.io/badge/mahipatni1828%40gmail.com-e11d48?style=for-the-badge&logo=gmail&logoColor=white&labelColor=080406" alt="Direct Email"></a>
 <a href="https://anime-todolist.vercel.app"><img src="https://img.shields.io/badge/Anime_Todo-Live_App-ff2a4b?style=for-the-badge&logo=vercel&logoColor=white&labelColor=080406&color=ff2a4b" alt="Anime Todo Live"></a>
 <a href="https://floodsetu.vercel.app"><img src="https://img.shields.io/badge/FloodSetu-Control_Room-e11d48?style=for-the-badge&logo=vercel&logoColor=white&labelColor=080406&color=e11d48" alt="FloodSetu Live"></a>
