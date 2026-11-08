@@ -21,11 +21,11 @@ def prepare_star(repo_root):
     
     # Crop tightly to the star graphic
     star_crop = star_orig.crop((75, 75, 695, 665))
-    star_h = 82
+    star_h = 46  # Calibrated to 46px to fit proportionally within the 48px banner box
     star_w = int(star_crop.width * (star_h / star_crop.height))
     star_scaled = star_crop.resize((star_w, star_h), Image.Resampling.LANCZOS).convert("RGBA")
     
-    arr = np.array(star_scaled)
+    arr = np.array(star_scaled, dtype=np.float32)
     h, w = arr.shape[:2]
     visited = np.zeros((h, w), dtype=bool)
     q = deque()
@@ -44,16 +44,21 @@ def prepare_star(repo_root):
 
     while q:
         cy, cx = q.popleft()
-        arr[cy, cx, 3] = int(min(255, max(0, arr[cy, cx, 0] * 3.5)))
+        arr[cy, cx, 3] = min(255, max(0, arr[cy, cx, 0] * 3.5))
         for ny, nx in [(cy - 1, cx), (cy + 1, cx), (cy, cx - 1), (cy, cx + 1)]:
             if 0 <= ny < h and 0 <= nx < w and not visited[ny, nx]:
                 if arr[ny, nx, 0] < 50:
                     visited[ny, nx] = True
                     q.append((ny, nx))
                     
-    clean_star = Image.fromarray(arr)
-    clean_star = ImageEnhance.Color(clean_star).enhance(1.2)
-    clean_star = ImageEnhance.Contrast(clean_star).enhance(1.1)
+    # Subdue aggressive red channel & brightness to match elegant profile crimson
+    arr[:, :, 0] = np.clip(arr[:, :, 0] * 0.82, 0, 255)
+    arr[:, :, 1] = np.clip(arr[:, :, 1] * 0.70, 0, 255)
+    arr[:, :, 2] = np.clip(arr[:, :, 2] * 0.70, 0, 255)
+    
+    clean_star = Image.fromarray(arr.astype(np.uint8))
+    clean_star = ImageEnhance.Color(clean_star).enhance(0.85)
+    clean_star = ImageEnhance.Brightness(clean_star).enhance(0.82)
     return clean_star
 
 def render_tag(label, val, star_img, font):
@@ -69,10 +74,10 @@ def render_tag(label, val, star_img, font):
     w_s = b_s[2] - b_s[0]
     
     content_w = w_l + w_s + w_v
-    pad_l = 30
-    pad_r = 20
+    pad_l = 22
+    pad_r = 16
     
-    box_x1 = star_w - 22  # Smooth overlap with right arm of star
+    box_x1 = star_w - 12  # Clean overlap with right arm of star
     box_w = content_w + pad_l + pad_r
     box_x2 = box_x1 + box_w
     
@@ -83,7 +88,7 @@ def render_tag(label, val, star_img, font):
     
     by1 = 20
     by2 = 68
-    border_w = 4
+    border_w = 3
     
     # 1. Black banner fill (#080406)
     draw.rectangle([box_x1, by1, box_x2, by2], fill=(8, 4, 6, 255))
@@ -110,12 +115,12 @@ def render_tag(label, val, star_img, font):
     cur_x = start_x + w_l
     draw.text((cur_x, ty), sep, font=font, fill="#71717a")
     cur_x += w_s
-    draw.text((cur_x, ty), val, font=font, fill="#ff2a4b")
+    draw.text((cur_x, ty), val, font=font, fill="#e11d48")
     
     return tag
 
 def main():
-    repo_root = "/Users/mahipatni/Antigravity/profile"
+    repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     tags_dir = os.path.join(repo_root, "assets", "tags")
     os.makedirs(tags_dir, exist_ok=True)
     
