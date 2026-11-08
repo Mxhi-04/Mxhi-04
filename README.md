@@ -129,7 +129,7 @@ Crafting little worlds, pixel by pixel — charting the convergence of **physics
 
 <br>
 
-<a href="https://github.com/Mxhi-04"><img src="https://streak-stats.demolab.com/?user=Mxhi-04&hide_border=true&background=080406&stroke=2a0a12&ring=e11d48&fire=ff2a4b&currStreakNum=f8fafc&currStreakLabel=ff2a4b&sideNums=f8fafc&sideLabels=e2d9dc&dates=806c72" width="70%" alt="Streak"></a>
+<a href="https://github.com/Mxhi-04"><img src="https://streak-stats.demolab.com/?user=Mxhi-04&theme=dark&hide_border=true&background=080406&stroke=2a0a12&ring=e11d48&fire=ff2a4b&currStreakNum=f8fafc&currStreakLabel=ff2a4b&sideNums=f8fafc&sideLabels=e2d9dc&dates=806c72" width="70%" alt="Streak"></a>
 
 <details>
 <summary><b>Achievements Unlocked</b> &nbsp;<sub>(<a href="https://github.com/Mxhi-04?tab=achievements">view live profile</a>)</sub></summary>
